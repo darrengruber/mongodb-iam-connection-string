@@ -42,7 +42,7 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="A small utility to generate a mongodb connection string from an IAM role",
+    description="A CLI and Python Library for configuration AWS IAM authentication with MongoDB URI connection strings.",
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
