@@ -106,14 +106,6 @@ Before you submit a pull request, check that it meets these guidelines:
    https://travis-ci.com/darrengruber/mongodb-iam-connection-string/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
-Tips
-----
-
-To run a subset of tests::
-
-
-    $ python -m unittest tests.test_mongodb_iam_connection_string
-
 Deploying
 ---------
 
@@ -124,5 +116,3 @@ Then run::
 $ bump2version patch # possible: major / minor / patch
 $ git push
 $ git push --tags
-
-Travis will then deploy to PyPI if tests pass.
