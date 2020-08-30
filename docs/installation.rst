@@ -12,7 +12,7 @@ To install MongoDB IAM Connection String as CLI tool, it is recommended that you
 
 .. code-block:: console
 
-    $ pipx install mongodb_iam_connection_string
+    $ pipx install mongodb-iam-connection-string
 
 This is the preferred method to install MongoDB IAM Connection String, as it will always install the most recent stable release.
 
