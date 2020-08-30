@@ -3,6 +3,7 @@
 """The setup script."""
 
 from setuptools import setup, find_packages
+import re
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -10,22 +11,21 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [ 
-    'boto3==1.14.43',
-    'botocore==1.17.43',
-    'docopt==0.6.2',
-    'docutils==0.15.2',
-    'jmespath==0.10.0',
-    'python-dateutil==2.8.1',
-    's3transfer==0.3.3',
-    'six==1.15.0',
-    'urllib3==1.25.10',
-    'yurl==1.0.0'
-]
+requirements = []
+with open('requirements.txt', 'r') as requirements_txt:
+    for requirement in requirements_txt:
+        requirement_match = re.findall('.*==.*(?= ;)|.*==.*',requirement)
+        if requirement_match:
+            requirements.append(requirement_match[0])
 
-setup_requirements = [ ]
+test_requirements = []
+with open('requirements_dev.txt', 'r') as requirements_dev_txt:
+    for requirement in requirements_dev_txt:
+        requirement_match = re.findall('.*==.*(?= ;)|.*==.*',requirement)
+        if requirement_match:
+            test_requirements.append(requirement_match[0])
 
-test_requirements = [ ]
+setup_requirements = []
 
 setup(
     author="Darren Gruber",

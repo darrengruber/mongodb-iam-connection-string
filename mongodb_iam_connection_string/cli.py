@@ -9,7 +9,7 @@ Usage:
   mics (-v | --version)
 
 Options:
-  --profile=AWS_PROFILE    The role name in the target account to assume.
+  --profile=AWS_PROFILE    The name of the AWS profile to use.
                            [default: default]
 
   -h --help                Show this screen.
