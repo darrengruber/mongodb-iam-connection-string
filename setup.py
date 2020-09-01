@@ -54,7 +54,7 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/darrengruber/mongodb-iam-connection-string',
-    version='1.0.0',
+    version='1.0.1',
     entry_points={"console_scripts": ["mics = mongodb_iam_connection_string.cli:cli"]},
     zip_safe=False,
 )

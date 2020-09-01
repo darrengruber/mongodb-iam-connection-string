@@ -26,7 +26,7 @@ from .mics import MongoDBIAMConnectionString as mics
 
 
 def cli():
-    version = '1.0.0'
+    version = '1.0.1'
     args = docopt(__doc__, version=f"MongoDB IAM Connection String {version}")
 
     connection_string = args['<MONGODB_CONNECTION_STRING>']
