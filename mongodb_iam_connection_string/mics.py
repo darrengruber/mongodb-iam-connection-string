@@ -66,7 +66,7 @@ class MongoDBIAMConnectionString:
         _token = self.creds.get('token')
         if _token:
             self.qs.update(
-                {'authMechanismProperties': quote_plus(f"AWS_SESSION_TOKEN:{_token}")})
+                {'authMechanismProperties': f"AWS_SESSION_TOKEN:{quote_plus(_token)}"})
 
         self.url = self.url.replace(query=self._dict2qs(self.qs))
 
