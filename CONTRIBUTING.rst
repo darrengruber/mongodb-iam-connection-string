@@ -1,5 +1,3 @@
-.. highlight:: shell
-
 ============
 Contributing
 ============
@@ -15,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/darrengruber/mongodb-iam-connection-string/issues.
+Report bugs at https://github.com/darrengruber/mongodb-iam-connection-string/issues
 
 If you are reporting a bug, please include:
 
@@ -26,8 +24,8 @@ If you are reporting a bug, please include:
 Fix Bugs
 ~~~~~~~~
 
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
+Look through the GitHub issues for bugs. Anything tagged with "bug"
+and "help wanted" is open to whoever wants to implement a fix for it.
 
 Implement Features
 ~~~~~~~~~~~~~~~~~~
@@ -38,16 +36,17 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-MongoDB IAM Connection String could always use more documentation, whether as part of the
-official MongoDB IAM Connection String docs, in docstrings, or even on the web in blog posts,
-articles, and such.
+Cookiecutter PyPackage could always use more documentation, whether as part of
+the official docs, in docstrings, or even on the web in blog posts, articles,
+and such.
 
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/darrengruber/mongodb-iam-connection-string/issues.
+The best way to send feedback is to file an issue at
+https://github.com/darrengruber/mongodb-iam-connection-string/issues.
 
-If you are proposing a feature:
+If you are proposing a new feature:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
@@ -57,62 +56,96 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `mongodb_iam_connection_string` for local development.
+Ready to contribute? Here's how to set up `mongodb-iam-connection-string` for local
+development. Please note this documentation assumes you already have
+`poetry` and `Git` installed and ready to go.
 
-1. Fork the `mongodb-iam-connection-string` repo on GitHub.
-2. Clone your fork locally::
+| 1. Fork the `mongodb-iam-connection-string` repo on GitHub.
 
-    $ git clone git@github.com:your_name_here/mongodb-iam-connection-string.git
+| 2. Clone your fork locally:
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+   .. code-block:: bash
 
-    $ mkvirtualenv mongodb-iam-connection-string
-    $ cd mongodb-iam-connection-string/
-    $ python setup.py develop
+        cd <directory_in_which_repo_should_be_created>
+        git clone git@github.com:YOUR_NAME/mongodb-iam-connection-string.git
 
-4. Create a branch for local development::
 
-    $ git checkout -b name-of-your-bugfix-or-feature
+| 3. Now we need to install the environment. Navigate into the directory
+
+   .. code-block:: bash
+
+       cd mongodb-iam-connection-string
+
+   If you are using ``pyenv``, select a version to use locally. (See installed versions with ``pyenv versions``)
+
+   .. code-block:: bash
+
+       pyenv local <x.y.z>
+
+   Then, install and activate the environment with:
+
+   .. code-block:: bash
+
+        poetry install
+        poetry shell
+
+| 4. Install pre-commit to run linters/formatters at commit time:
+
+   .. code-block:: bash
+
+        poetry run pre-commit install
+
+| 5. Create a branch for local development:
+
+   .. code-block:: bash
+
+        git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
 
-    $ flake8 mongodb_iam_connection_string tests
-    $ python setup.py test or pytest
-    $ tox
+| 6. Don't forget to add test cases for your added functionality to the ``tests`` directory.
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+| 7. When you're done making changes, check that your changes pass the formatting tests.
 
-6. Commit your changes and push your branch to GitHub::
+   .. code-block:: bash
 
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+        make check
 
-7. Submit a pull request through the GitHub website.
+| 8. Now, validate that all unit tests are passing:
+
+   .. code-block:: bash
+
+        make test
+
+| 9. Before raising a pull request you should also run tox. This will run the
+   tests across different versions of Python:
+
+   .. code-block:: bash
+
+        tox
+
+   This requires you to have multiple versions of python installed.
+   This step is also triggered in the CI/CD pipeline, so you could also choose to skip this
+   step locally.
+
+| 10. Commit your changes and push your branch to GitHub:
+
+   .. code-block:: bash
+
+        git add .
+        git commit -m "Your detailed description of your changes."
+        git push origin name-of-your-bugfix-or-feature
+
+| 11. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
------------------------
+---------------------------
 
 Before you submit a pull request, check that it meets these guidelines:
 
 1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put
-   your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
-3. The pull request should work for Python 3.5, 3.6, 3.7 and 3.8, and for PyPy. Check
-   https://travis-ci.com/darrengruber/mongodb-iam-connection-string/pull_requests
-   and make sure that the tests pass for all supported Python versions.
 
-Deploying
----------
-
-A reminder for the maintainers on how to deploy.
-Make sure all your changes are committed (including an entry in HISTORY.rst).
-Then run::
-
-$ bump2version patch # possible: major / minor / patch
-$ git push
-$ git push --tags
+2. If the pull request adds functionality, the docs should be updated. Put your
+   new functionality into a function with a docstring, and add the feature to
+   the list in README.rst.
